@@ -1,0 +1,10 @@
+# kubectl --namespace kubernetes-dashboard patch deployment kubernetes-dashboard --patch-file patch-skip-login.yaml
+spec:
+  template:
+    spec:
+      containers:
+      - name: kubernetes-dashboard
+        args:
+        - --namespace=kubernetes-dashboard
+        - --enable-insecure-login
+        - --enable-skip-login
